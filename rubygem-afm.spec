@@ -4,7 +4,7 @@
 #
 Name     : rubygem-afm
 Version  : 0.2.2
-Release  : 9
+Release  : 10
 URL      : https://rubygems.org/downloads/afm-0.2.2.gem
 Source0  : https://rubygems.org/downloads/afm-0.2.2.gem
 Summary  : No detailed summary available
@@ -13,9 +13,7 @@ License  : MIT
 BuildRequires : ruby
 BuildRequires : rubygem-bundler
 BuildRequires : rubygem-minitest
-BuildRequires : rubygem-rake
 BuildRequires : rubygem-rdoc
-BuildRequires : rubygem-test-unit
 
 %description
 = afm
@@ -52,35 +50,22 @@ fi
 %check
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
-export no_proxy=intel.com,localhost
+export no_proxy=localhost
 pushd %{buildroot}%{gem_dir}/gems/afm-0.2.2
-rake --trace test TESTOPTS="-v"
+ruby -v -I.:lib:test test*/test_*.rb
 popd
 
 
 %files
 %defattr(-,root,root,-)
-/usr/lib64/ruby/gems/2.2.0/cache/afm-0.2.2.gem
-/usr/lib64/ruby/gems/2.2.0/doc/afm-0.2.2/ri/AFM/Font/%5b%5d-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/afm-0.2.2/ri/AFM/Font/cdesc-Font.ri
-/usr/lib64/ruby/gems/2.2.0/doc/afm-0.2.2/ri/AFM/Font/char_metrics-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/afm-0.2.2/ri/AFM/Font/char_metrics_by_code-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/afm-0.2.2/ri/AFM/Font/from_file-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/afm-0.2.2/ri/AFM/Font/kern_pairs-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/afm-0.2.2/ri/AFM/Font/metadata-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/afm-0.2.2/ri/AFM/Font/metrics_for-i.ri
-/usr/lib64/ruby/gems/2.2.0/doc/afm-0.2.2/ri/AFM/Font/new-c.ri
-/usr/lib64/ruby/gems/2.2.0/doc/afm-0.2.2/ri/AFM/cdesc-AFM.ri
-/usr/lib64/ruby/gems/2.2.0/doc/afm-0.2.2/ri/cache.ri
-/usr/lib64/ruby/gems/2.2.0/doc/afm-0.2.2/ri/page-LICENSE.ri
-/usr/lib64/ruby/gems/2.2.0/doc/afm-0.2.2/ri/page-README_rdoc.ri
-/usr/lib64/ruby/gems/2.2.0/gems/afm-0.2.2/CHANGELOG.md
-/usr/lib64/ruby/gems/2.2.0/gems/afm-0.2.2/LICENSE
-/usr/lib64/ruby/gems/2.2.0/gems/afm-0.2.2/README.rdoc
-/usr/lib64/ruby/gems/2.2.0/gems/afm-0.2.2/Rakefile
-/usr/lib64/ruby/gems/2.2.0/gems/afm-0.2.2/VERSION
-/usr/lib64/ruby/gems/2.2.0/gems/afm-0.2.2/lib/afm.rb
-/usr/lib64/ruby/gems/2.2.0/gems/afm-0.2.2/test/fixtures/Vera.afm
-/usr/lib64/ruby/gems/2.2.0/gems/afm-0.2.2/test/helper.rb
-/usr/lib64/ruby/gems/2.2.0/gems/afm-0.2.2/test/test_afm.rb
-/usr/lib64/ruby/gems/2.2.0/specifications/afm-0.2.2.gemspec
+/usr/lib64/ruby/gems/2.3.0/cache/afm-0.2.2.gem
+/usr/lib64/ruby/gems/2.3.0/gems/afm-0.2.2/CHANGELOG.md
+/usr/lib64/ruby/gems/2.3.0/gems/afm-0.2.2/LICENSE
+/usr/lib64/ruby/gems/2.3.0/gems/afm-0.2.2/README.rdoc
+/usr/lib64/ruby/gems/2.3.0/gems/afm-0.2.2/Rakefile
+/usr/lib64/ruby/gems/2.3.0/gems/afm-0.2.2/VERSION
+/usr/lib64/ruby/gems/2.3.0/gems/afm-0.2.2/lib/afm.rb
+/usr/lib64/ruby/gems/2.3.0/gems/afm-0.2.2/test/fixtures/Vera.afm
+/usr/lib64/ruby/gems/2.3.0/gems/afm-0.2.2/test/helper.rb
+/usr/lib64/ruby/gems/2.3.0/gems/afm-0.2.2/test/test_afm.rb
+/usr/lib64/ruby/gems/2.3.0/specifications/afm-0.2.2.gemspec
