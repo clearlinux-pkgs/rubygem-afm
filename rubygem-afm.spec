@@ -4,7 +4,7 @@
 #
 Name     : rubygem-afm
 Version  : 0.2.2
-Release  : 12
+Release  : 13
 URL      : https://rubygems.org/downloads/afm-0.2.2.gem
 Source0  : https://rubygems.org/downloads/afm-0.2.2.gem
 Summary  : No detailed summary available
@@ -26,6 +26,7 @@ gem unpack %{SOURCE0}
 gem spec %{SOURCE0} -l --ruby > rubygem-afm.gemspec
 
 %build
+export LANG=C
 gem build rubygem-afm.gemspec
 
 %install
@@ -48,6 +49,7 @@ cp -pa .%{_bindir}/* \
 fi
 
 %check
+export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost
